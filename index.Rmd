@@ -66,9 +66,23 @@ xaringanExtra::use_logo(
 )
 ```
 ---
-class: inverse, center, middle
 
-![writing gif](img/phdwrite.gif)
+```{r , echo=FALSE}
+knitr::include_url("https://yihui.org")
+```
+
+---
+# Headings - Introduction
+
+Usually very few headings
+
+- Introduction
+
+- Research question
+
+- Objectives 
+
+- Thesis outline
 
 ---
 class: inverse, center, middle
