@@ -1,5 +1,5 @@
 ---
-title: "Thesis study"
+title: "Remotely Sensing Cities and Environments"
 #subtitle: "⚔<br/>with xaringan"
 author: "Andy MacLachlan"
 output:
@@ -28,6 +28,9 @@ xaringanExtra::use_scribble()
 xaringanExtra::use_search(show_icon = TRUE)
 xaringanExtra::use_freezeframe()
 xaringanExtra::use_clipboard()
+xaringanExtra::use_tile_view()
+xaringanExtra::use_panelset()
+xaringanExtra::use_editable(expires = 1)
 xaringanExtra::use_fit_screen()
 xaringanExtra::use_extra_styles(
   hover_code_line = TRUE,         
@@ -47,11 +50,11 @@ class: inverse, center, title-slide, middle
 library(fontawesome)
 ```
 
-# Thesis study + Q and A
+# Remotely Sensing Cities and Environments
 
-### Andy MacLachlan
+### Lecture 1
 
-### 14/04/2021 (updated: `r format(Sys.time(), "%d/%m/%Y")`)
+### 02/02/2022 (updated: `r format(Sys.time(), "%d/%m/%Y")`)
 
 `r fa("paper-plane", fill = "white")`[a.maclachlan@ucl.ac.uk](mailto:a.maclachlan@ucl.ac.uk)
 `r fa("twitter", fill = "white")`[andymaclachlan](https://twitter.com/andymaclachlan)
@@ -60,51 +63,95 @@ library(fontawesome)
 
 <a href="https://github.com/andrewmaclachlan" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
+
+---
+class: inverse, center, middle
+# Let's start with a rocket launch`r emo::ji("rocket")` and a drum beat `r emo::ji("musical_note")`
+
+
+---
+class: inverse, center, middle
 ```{r xaringan-logo, echo=FALSE}
 xaringanExtra::use_logo(
-  image_url = "https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/xaringan.png"
+  image_url = "img/casa_logo.jpg"
 )
 ```
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bmoYMzGBN5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ---
 
-```{r , echo=FALSE}
-knitr::include_url("https://yihui.org")
+# Lecture outline 
+.pull-left[
+
+- How to use the lectures
+
+- Expectations
+
+- Module housekeeping (locations, timings etc)
+
+- Module aims + objectives
+
+- Module assessment
+
+- Introduction to remote sensing
+
+- Questions
+]
+.pull-right[
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('img/satellite.png')
 ```
+]
 
 ---
-# Headings - Introduction
 
-Usually very few headings
+# How to use the lectures
 
-- Introduction
+- Slides are made with [xaringan](https://slides.yihui.org/xaringan/#1)
 
-- Research question
+- `r fa("search")` In the bottom left there is a search tool which will search all content of presentation
 
-- Objectives 
+- Control + F will also search 
 
-- Thesis outline
+- Press enter to move to the next result 
 
+- `r fa("pencil-alt")` In the bottom right let's you draw on the slides, although these aren't saved.
+
+- Pressing the letter `o` (for overview) will allow you to see an overview of the whole presentation and go to a slide
+
+- Alternatively just typing the slide number e.g. 10 on the website will take you to that slide
+
+- Pressing alt+F will fit the slide to the screen, this is useful if you have resized the window and have another open - side by side. 
+
+---
+
+# Expectations
+
+## Student
+
+- Staff to be present and available for questions
+
+- Taught current methods applicable to MSc study 
+
+- To be challenged 
+
+## Staff
+
+- CASA0005 (GIS) is a pre-requisite to this module, so most content / code presented there will be assumed knowledge here
+
+- Engage with the staff and material 
+
+- Challenge yourself 
+
+- Complete the set tasks and come prepared 
 ---
 class: inverse, center, middle
 
-# Possible headings
+<blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">You&#39;re doing it right if you get frustrated: if you&#39;re not frustrated, you&#39;re (probably) not stretching yourself mentally</p>&mdash; Hadley Wickham (@hadleywickham) <a href="https://twitter.com/hadleywickham/status/565516733516349441?ref_src=twsrc%5Etfw">11. Februar 2015</a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<br/>
 
----
 
-# Headings - Introduction
-
-Usually very few headings
-
-- Introduction
-
-- Research question
-
-- Objectives 
-
-- Thesis outline
----
-class: inverse, center, middle
-# Introduction = clearly show the **research gap** that will be expanded on in the literature review
 ---
 
 #Literature review
@@ -486,28 +533,16 @@ class: inverse, center, middle
 ---
 # Word 2.0
 
-* Set heading level styles
-```{r  echo=FALSE, fig.align='center', out.width="30%"}
-knitr::include_graphics('img/heading_styles.PNG') 
-```
-* Use numbered headings
-```{r echo=FALSE, out.width = "300pt", fig.align='center'}
-knitr::include_graphics('img/headings.PNG') 
-```
+
 ---
 # Captions
 
 * Insert captions for figures and tables
 
-```{r echo=FALSE, out.width = "200pt", fig.align='center'}
-knitr::include_graphics('img/caption.PNG') 
-```
+
 
 * Automatically cross reference them in the text<sup>1</sup>
 
-```{r echo=FALSE, out.width = "200pt", fig.align='center'}
-knitr::include_graphics('img/cross-reference.png') 
-```
 
 .footnote[
 [1] this includes headings]
@@ -517,38 +552,21 @@ knitr::include_graphics('img/cross-reference.png')
 
 * Auto insert table of contents and table of figures
 
-```{r echo=FALSE, out.width = "600pt", fig.align='center'}
-knitr::include_graphics('img/table_of_contents.PNG') 
-```
-*AND table of tables
-
-```{r echo=FALSE, out.width = "300pt", fig.align='center'}
-knitr::include_graphics('img/table_of_tables.PNG') 
-```
 
 ---
 # Advanced headers and footers
 
 * Insert current chapter title into the page header
 
-```{r echo=FALSE, out.width = "200pt", fig.align='center'}
-knitr::include_graphics('img/header_chapter_name.PNG') 
-```
+
 
 * Insert a footer - unlink from previous section to change style (e.g. roman numerals for table of contents then numbers for the rest of the documents)
-
-```{r echo=FALSE, out.width = "200pt", fig.align='center'}
-knitr::include_graphics('img/page_number_format.PNG') 
-```
 
 ---
 # Page break
 
 * Useful to have different formatting on different sections - e.g. title page, abstract and then contents 
 
-```{r echo=FALSE, out.width = "300pt", fig.align='center'}
-knitr::include_graphics('img/page_break.PNG') 
-```
 
 ---
 class: inverse, center, middle
