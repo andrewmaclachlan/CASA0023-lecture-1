@@ -77,6 +77,7 @@ xaringanExtra::use_logo(
 )
 ```
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bmoYMzGBN5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
@@ -115,7 +116,7 @@ knitr::include_graphics('img/satellite.png')
 
 - Press enter to move to the next result 
 
-- `r fa("pencil-alt")` In the bottom right let's you draw on the slides, although these aren't saved.
+- `r fa("pencil-alt")` In the top right let's you draw on the slides, although these aren't saved.
 
 - Pressing the letter `o` (for overview) will allow you to see an overview of the whole presentation and go to a slide
 
