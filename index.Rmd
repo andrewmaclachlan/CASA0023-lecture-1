@@ -4,7 +4,7 @@ title: "Remotely Sensing Cities and Environments"
 author: "Andy MacLachlan"
 output:
   xaringan::moon_reader:
-    css: ["default", "rladies", "rladies-fonts"]    
+    css: ["custom.css", "default", "rladies", "rladies-fonts"]    
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -145,3 +145,283 @@ knitr::include_graphics('img/satellite.png')
 - Challenge yourself 
 
 - Complete the set tasks and come prepared 
+
+---
+# Module housekeeping 
+
+.pull-left[
+Sessions:
+
+- 1 hour weekly lecture 
+
+- 2 hour practical 
+
+- Drop in sessions
+  - will discuss assignment tasks
+  - Q and A
+  - time for us to address any issues
+  ]
+  
+.pull-right[
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('img/echo-1.jpg')
+```
+]  
+???
+Echo1-first passive US communications satellite
+
+---
+class: inverse, center, middle
+
+# Module aims
+
+# This module will enable students to operationalise remotely sensed Earth observation data for informing decisions on environmental hazards arising from a changing climate, specifically in relation to (a) urban areas and (b) future urban sustainability
+
+---
+
+# Module learning outcomes
+
+At the end of this module you should be able...
+
+`r fa("check-square", fill = "black")` Create a **reproducible online portfolio workbook**
+
+`r fa("check-square", fill = "black")` Explain and evaluate **common issues with urban and environmental policies** at the local, national and international level that fail to consider spatial data 
+
+`r fa("check-square", fill = "black")` Revise vague and ambiguous development **targets**
+
+`r fa("check-square", fill = "black")` Appropriately pre-process Earth observation imagery ready for analysis 
+
+`r fa("check-square", fill = "black")` Apply published methodologies to extract meaning from Earth observation data  
+
+`r fa("check-square", fill = "black")` Combine a **variety of spatial data** to demonstrate the benefits of data-informed governance and planning.  
+
+`r fa("check-square", fill = "black")` Create and design a reproducible workflow for consistent monitoring of urban and environmental metrics 
+
+`r fa("check-square", fill = "black")` Critique and optimise recently developed metropolitan climate mitigation strategies using appropriate spatial data, optimizing financial investment and environmental outcomes 
+
+???
+
+Bold type denotes key aspects of the module
+---
+# Assessment
+
+1. Weekly project online portfolio using Bookdown, requiring:
+  * responses to short discussion questions with reference to literature 
+  * concise summary of the concepts taught each week with reference to literature and any possible methodological advancements  
+  * notes of required (and any additional independent) reading, summarizing each piece and providing a narrative through the work. This could include both flow diagrams and written work or any other suitable alternative.  
+  
+1. Group presentation 
+  * A 10-minute group presentation "bidding" for employment as contractors to solve an issue from policy. 
+  * Groups will select a single city and detail how Earth observation data could be applied to or improve their local, national or metropolitan development plans in achieving global development goals (e.g. New Urban Agenda, Sustainable Development Goals or the Sendai Framework for disaster risk reduction). 
+  * The presentation will require **no analysis** to be undertaken.  
+  
+---
+
+class: inverse, center, middle
+
+# More details to come
+#all tools required will be taught 
+--
+
+#`r emo::ji("smile")`
+---
+
+class: inverse, center, middle
+
+# Now a short lecture
+
+---
+
+# Introduction to remote sensing 
+
+.pull-left[
+
+* NASA defines remote sensing as **acquiring information from a distance**
+
+* Interchangeable used with **Earth Observation** or **EO**
+
+* This is achieved through **sensors** mounted on a platform
+  * Satellites `r emo::ji("satellite")`
+  * Planes (aerial imagery) `r emo::ji("money")`
+  * Drones 
+  * Phones
+  * Free standing on the ground or sea (with hand held devices)
+  
+* More than 150 satellites in orbit carrying sensors 
+]
+
+.pull-right[
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('img/Satellites.jpg')
+```
+.small[Source: https://www.industrytap.com/remote-sensing-sustainable-land-use/33218]
+]
+---
+
+# The two types of sensor
+.pull-left[
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('img/Passive-and-active-sensors-systems-working-principles-24.png')
+```
+.small[Source: https://www.researchgate.net/figure/Passive-and-active-sensors-systems-working-principles-24_fig2_344464269]
+]
+
+.pull-right[
+## Active
+
+* Have an energy source for illumination 
+* Actively emits and then waits to receive 
+
+## Passive  
+
+* Use energy that is available
+* Don't emit anything 
+* Usually detecting reflected energy from the sun
+
+Sensors can be mounted on any platform. 
+]
+
+---
+# Data formats 
+
+.pull-left[
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('img/raster_dataset.png')
+```
+.small[Source: [QGIS documentation](https://docs.qgis.org/2.18/en/docs/gentle_gis_introduction/raster_data.html)]
+]
+
+.pull-right[
+
+* In the majority of cases remotely sensed data is raster...
+  * band interleaved by line (BIL)
+  * band sequential (BSQ)
+  * GeoTIFF (most common)
+  * band interleaved by pixel (BIP)
+
+* However this is dependent on the sensor. 
+
+* For example, LiDAR is point data with x,y (like we've seen before) but also a z dimension (height). But LiDAR is often used to create a raster dataset such as an elevation model
+]
+
+---
+
+class: inverse, center, middle
+# The three (well four) **resolution** amigos 
+
+![](https://media.giphy.com/media/Y0tPk3dncALdnYluKq/giphy-downsized-large.gif)
+
+
+---
+
+# Four resolutions 
+
+Remotely sensed data and applications will vary based on the four resolutions
+
+* Spatial = the size of the raster grid per pixel (e.g. 20cm or 30m)
+
+* Spectral = the number of bands it records data in...more soon
+
+* Temporal = the time it revisits (e.g. daily, every 7 days, on demand `r emo::ji("airplane")`)
+
+* Radiometric = identify differences in light or reflectance, in practice this is the range of possible values.
+  * an 8 bit sensor has values between 0 and 255 (256 possibilities)
+  * an 11 bit sensor has values between 0 and 2047(2048 possibilities)
+  
+Quick examples to follow...
+---
+
+# Spatial resolution 
+
+* The size of the raster cells
+
+* Range between 10cm and several kilometers.
+
+```{r echo=FALSE, out.width='50%', fig.align='center'}
+knitr::include_graphics('img/spatial_resolution.png')
+```
+---
+
+# Spectral resolution 1
+
+* As humans we see in the visible part of the electromagnetic spectrum, meaning the images we see are composed of red, green and blue wavelengths --- the visible spectrum.
+
+* Objects appear a certain colour as that's the wavelength that is reflected, with the others being absorbed. 
+
+* We can take values for each wavelength (or a band of several wavelengths) across the electromagnetic spectrum to create a **spectral signature** 
+
+* Every feature on Earth will have a unique spectral signature...
+
+```{r echo=FALSE, out.width='40%', fig.align='center'}
+knitr::include_graphics('img/spectral_signatures_landsat_450.jpg')
+```
+.small[Source: [Science Education through Earth Observation for High Schools](https://seos-project.eu/classification/classification-c01-p05.html)]
+
+For more information watch the into to Electromagnetic Spectrum from NASA: https://science.nasa.gov/ems/01_intro 
+
+---
+
+# Spectral resolution 2 
+
+* However, we are often constrained to atmospheric windows.
+
+* Water vapour, ozone, carbon dioxide and atmospheric molecules block parts of the the spectrum
+
+* We can only observe where there aren't absorbed by the atmosphere.  
+
+```{r echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics('img/Atmospheric-Electromagnetic-Opacity.png')
+```
+.small[Source: [GIS geography](https://gisgeography.com/atmospheric-window/)]
+
+---
+# Spectral resolution 3 
+
+* We classify the type or spectral resolution based on the number of bands it observes
+
+* Each band is **usually** provided as a separate raster layer
+
+* This means a spectral signature can be discrete (e.g. multi spectral) or continuous (e.g. hyper spectral)
+
+```{r echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics('img/What-is-Hyperspectral-Imaging.png')
+```
+.small[Source: [nieros](https://www.nireos.com/hyperspectral-imaging/)]
+
+---
+# Radiometric resolution 
+
+* 8 bit = 256 possible values 
+
+* 4 bit = 16 possible values
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('img/bits.png')
+```
+.small[Source: [GIS geography](https://gisgeography.com/bit-depth/)]
+
+Lower the radiometric resolution the lower the quality of the image and possibility to differentiate features. 
+
+---
+
+# Temporal resolution 
+
+* The revisit time of the sensor
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('img/temporal_resolution.jpg')
+```
+.small[Source: [ESRI](https://www.esri.com/about/newsroom/arcuser/a-world-of-imagery-available-through-arcgis-online/)]
+
+---
+
+# Other considerations 
+
+---
+
+# Balancing act
+
+
+
+
