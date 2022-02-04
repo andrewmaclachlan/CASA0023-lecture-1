@@ -208,8 +208,8 @@ Bold type denotes key aspects of the module
 1. Weekly project online portfolio using Bookdown, requiring:
   * responses to short discussion questions with reference to literature 
   * concise summary of the concepts taught each week with reference to literature and any possible methodological advancements  
-  * notes of required (and any additional independent) reading, summarizing each piece and providing a narrative through the work. This could include both flow diagrams and written work or any other suitable alternative.  
-  
+  * notes of required (and any additional independent) reading, summarizing each piece and providing a narrative through the work. This could include both flow diagrams and written work or any other suitable alternative.
+
 1. Group presentation 
   * A 10-minute group presentation "bidding" for employment as contractors to solve an issue from policy. 
   * Groups will select a single city and detail how Earth observation data could be applied to or improve their local, national or metropolitan development plans in achieving global development goals (e.g. New Urban Agenda, Sustainable Development Goals or the Sendai Framework for disaster risk reduction). 
@@ -268,21 +268,115 @@ knitr::include_graphics('img/Passive-and-active-sensors-systems-working-principl
 ]
 
 .pull-right[
-## Active
+### Active
 
 * Have an energy source for illumination 
-* Actively emits and then waits to receive 
+* Actively emits electormagentic waves and then waits to receive 
+* Such as: Radar, X-ray, LiDAR
 
-## Passive  
+### Passive  
 
 * Use energy that is available
 * Don't emit anything 
-* Usually detecting reflected energy from the sun
+* Usually detecting **reflected** energy from the sun
+* Energy is in electromagnetic waves...
+* Such as: Human eye, camera, satellite sensor
 
 Sensors can be mounted on any platform. 
 ]
 
 ---
+# Electromagentic waves
+
+* Perpendicular electric and magnetic field 
+* $\lambda$ = wavelength, distance between two crests 
+* $c$ = velocity of light 3 x 10^8
+* $v$ = frequency, rate of oscillation 
+
+$\lambda$ = $c$ / $v$
+```{r echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics('img/electormagneticfield.PNG')
+```
+.small[Source: [Principles of Remote sensing](http://www.wamis.org/agm/pubs/agm8/Paper-2.pdf)
+]
+
+---
+# Interacting with Earth's surface 
+
+* Electromagnetic radiation(EMR) (e.g. from the sun) isn't automatically reflected 
+* Experiences a number of changes prior to hitting the sensor
+These include:
+  * Energy being absorbed by the surface
+  * Energy being transmitted through the surface
+  * Energy can be scattered by particles in the atmosphere (next slide)
+
+```{r echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics('img/EMR.png')
+```
+
+.small[Source: [Principles of Remote sensing](http://www.wamis.org/agm/pubs/agm8/Paper-2.pdf)
+]
+
+---
+# Interacting with Earth's surface 2
+
+There are three types of atmospheric scattering:
+
+* Rayleigh = particles are very small compared to the wavelength 
+* Mie = particles are the same size compared to the wavelength
+* Non selective = particles are much larger than the wavelength 
+
+```{r echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics('img/scattering.jpg')
+```
+.small[Source: [Julien Chimot, from Bovensmann et al., 2011](https://julien-chimot-research.blog/the-light-energy-source-in-remote-sensing/)
+]
+
+---
+class: inverse, center, middle
+
+# Scattering in action....
+
+--
+# Why is the sky blue
+
+---
+
+# Raleigh scattering in action
+
+* Sunlight is scattered by  particles in the atmosphere
+
+* Smaller wavelengths scatter easier
+
+* These are the blue hues
+
+* When the sun's angle changes the blue light scatter doesn't reach our eyes as the distance is increased = so longer wavelengths reach us= reds and oranges. 
+
+```{r echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics('img/redsunsetdiagram1.png')
+```
+.small[Source: [Explaining Science](https://explainingscience.org/2015/09/30/why-is-the-sky-blue/)
+]
+---
+class: inverse, center, middle
+
+# Scattering in action....
+
+--
+# Why is the ocean (usually) blue?
+
+---
+
+class: inverse, center, middle
+
+# Satellite (and aerial) sensors are affected by the atmopsheric scattering
+
+# We can remove this through removing them through **atmospheic correction**
+
+# More on this in future lectures
+
+---
+
 # Data formats 
 
 .pull-left[
@@ -297,12 +391,15 @@ knitr::include_graphics('img/raster_dataset.png')
 * In the majority of cases remotely sensed data is raster...
   * band interleaved by line (BIL)
   * band sequential (BSQ)
-  * GeoTIFF (most common)
   * band interleaved by pixel (BIP)
+  * GeoTIFF (most common)
+
 
 * However this is dependent on the sensor. 
 
 * For example, LiDAR is point data with x,y (like we've seen before) but also a z dimension (height). But LiDAR is often used to create a raster dataset such as an elevation model
+
+* See [ArcMap help for examples of BIL, BSQ and BIP](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/raster-and-images/bil-bip-and-bsq-raster-files.html)
 ]
 
 ---
@@ -347,7 +444,7 @@ knitr::include_graphics('img/spatial_resolution.png')
 
 * As humans we see in the visible part of the electromagnetic spectrum, meaning the images we see are composed of red, green and blue wavelengths --- the visible spectrum.
 
-* Objects appear a certain colour as that's the wavelength that is reflected, with the others being absorbed. 
+* Objects appear a certain colour as that's the wavelength that is reflected, with the others being absorbed (or scattered - like sunsets). 
 
 * We can take values for each wavelength (or a band of several wavelengths) across the electromagnetic spectrum to create a **spectral signature** 
 
@@ -378,6 +475,15 @@ knitr::include_graphics('img/Atmospheric-Electromagnetic-Opacity.png')
 ---
 # Spectral resolution 3 
 
+
+```{r echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics('img/EMS-Introduction_0.jpeg')
+```
+.small[Source: [NASA Science](https://earthdata.nasa.gov/learn/backgrounders/remote-sensing#orbits)]
+
+---
+# Spectral resolution 4 
+
 * We classify the type or spectral resolution based on the number of bands it observes
 
 * Each band is **usually** provided as a separate raster layer
@@ -390,13 +496,34 @@ knitr::include_graphics('img/What-is-Hyperspectral-Imaging.png')
 .small[Source: [nieros](https://www.nireos.com/hyperspectral-imaging/)]
 
 ---
+# Spectral resolution 5
+
+Measuring spectral reflectance isn't constrained to senors mounted on satellites, planes or drones
+
+It can also be done using a **"spectroradiometer"** in a lab or in the field...
+
+However, this is dependent on the incident (incoming) radiation so it must be calibrated with a pure white reference panel...
+
+.pull-left[
+```{r echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics('img/soton_lab.jpg')
+```
+.small[Source: [Richard Treves](https://www2.geog.soton.ac.uk/users/trevesr/obs/rseo/electromagnetic_radiation_and_plants.html)]
+]
+
+.pull-right[
+```{r echo=FALSE, out.width='50%', fig.align='center'}
+knitr::include_graphics('img/calibration_panel.jpg')
+```
+]
+---
 # Radiometric resolution 
 
 * 8 bit = 256 possible values 
 
 * 4 bit = 16 possible values
 
-```{r echo=FALSE, out.width='100%'}
+```{r echo=FALSE, out.width='80%', fig.align='center'}
 knitr::include_graphics('img/bits.png')
 ```
 .small[Source: [GIS geography](https://gisgeography.com/bit-depth/)]
@@ -409,7 +536,7 @@ Lower the radiometric resolution the lower the quality of the image and possibil
 
 * The revisit time of the sensor
 
-```{r echo=FALSE, out.width='100%'}
+```{r echo=FALSE, out.width='60%', fig.align='center'}
 knitr::include_graphics('img/temporal_resolution.jpg')
 ```
 .small[Source: [ESRI](https://www.esri.com/about/newsroom/arcuser/a-world-of-imagery-available-through-arcgis-online/)]
@@ -418,10 +545,54 @@ knitr::include_graphics('img/temporal_resolution.jpg')
 
 # Other considerations 
 
+* Type of orbit 
+  * geosynchronous orbit (GSO) = satellite matches the Earth's rotation
+  * geostationary orbit = holds same position, usually only for communications but some sensors are geostationary.  
+
+```{r echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics('img/20087311523106900-2008-09TatemF2.jpg')
+```
+.small[Source: [American Scientist](https://www.americanscientist.org/article/fifty-years-of-earth-observation-satellites)]
+
+---
+
+# Common sesnors:
+
+
+
 ---
 
 # Balancing act
 
+* The type of question you are looking to answer will dictate what sensor is most appropriate.
+
+  * Size of features 
+  
+  * Date range
+  
+  * Revisit requirement
+  
+  * Spectral sensitivity 
+  
+  * Cost  
+  
+---
+
+# Conclusion
+
+* Active and passive remote sensing
+
+* Considered how electromagnetic waves interact with
+  * Earth's surface
+  * Atmosphere
+  
+* Explored the 4 resolutions of remotely sensed data
+  * Spectral
+  * Spatial
+  * Temporal
+  * Radiometric
+  
+* Identified how constrations (envrionmental or sensor) can dictate the choice of data we use. 
 
 
 

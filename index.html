@@ -32,7 +32,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x6cb9059fe934be29c497cce9765a8d7","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"a8ddd33f8e6045de974b16d00e6efdf9","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
     <script src="libs/editable/editable.js"></script>
@@ -62,7 +62,7 @@ class: inverse, center, title-slide, middle
 
 ### Lecture 1
 
-### 02/02/2022 (updated: 03/02/2022)
+### 02/02/2022 (updated: 04/02/2022)
 
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>[a.maclachlan@ucl.ac.uk](mailto:a.maclachlan@ucl.ac.uk)
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-right:0.2em;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>[andymaclachlan](https://twitter.com/andymaclachlan)
@@ -240,8 +240,8 @@ Bold type denotes key aspects of the module
 1. Weekly project online portfolio using Bookdown, requiring:
   * responses to short discussion questions with reference to literature 
   * concise summary of the concepts taught each week with reference to literature and any possible methodological advancements  
-  * notes of required (and any additional independent) reading, summarizing each piece and providing a narrative through the work. This could include both flow diagrams and written work or any other suitable alternative.  
-  
+  * notes of required (and any additional independent) reading, summarizing each piece and providing a narrative through the work. This could include both flow diagrams and written work or any other suitable alternative.
+
 1. Group presentation 
   * A 10-minute group presentation "bidding" for employment as contractors to solve an issue from policy. 
   * Groups will select a single city and detail how Earth observation data could be applied to or improve their local, national or metropolitan development plans in achieving global development goals (e.g. New Urban Agenda, Sustainable Development Goals or the Sendai Framework for disaster risk reduction). 
@@ -274,7 +274,7 @@ class: inverse, center, middle
 
 * This is achieved through **sensors** mounted on a platform
   * Satellites 📡
-  * Planes (aerial imagery) 💴
+  * Planes (aerial imagery) 💷
   * Drones 
   * Phones
   * Free standing on the ground or sea (with hand held devices)
@@ -296,21 +296,107 @@ class: inverse, center, middle
 ]
 
 .pull-right[
-## Active
+### Active
 
 * Have an energy source for illumination 
-* Actively emits and then waits to receive 
+* Actively emits electormagentic waves and then waits to receive 
+* Such as: Radar, X-ray, LiDAR
 
-## Passive  
+### Passive  
 
 * Use energy that is available
 * Don't emit anything 
-* Usually detecting reflected energy from the sun
+* Usually detecting **reflected** energy from the sun
+* Energy is in electromagnetic waves...
+* Such as: Human eye, camera, satellite sensor
 
 Sensors can be mounted on any platform. 
 ]
 
 ---
+# Electromagentic waves
+
+* Perpendicular electric and magnetic field 
+* `\(\lambda\)` = wavelength, distance between two crests 
+* `\(c\)` = velocity of light 3 x 10^8
+* `\(v\)` = frequency, rate of oscillation 
+
+`\(\lambda\)` = `\(c\)` / `\(v\)`
+&lt;img src="img/electormagneticfield.PNG" width="60%" style="display: block; margin: auto;" /&gt;
+.small[Source: [Principles of Remote sensing](http://www.wamis.org/agm/pubs/agm8/Paper-2.pdf)
+]
+
+---
+# Interacting with Earth's surface 
+
+* Electromagnetic radiation(EMR) (e.g. from the sun) isn't automatically reflected 
+* Experiences a number of changes prior to hitting the sensor
+These include:
+  * Energy being absorbed by the surface
+  * Energy being transmitted through the surface
+  * Energy can be scattered by particles in the atmosphere (next slide)
+
+&lt;img src="img/EMR.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+.small[Source: [Principles of Remote sensing](http://www.wamis.org/agm/pubs/agm8/Paper-2.pdf)
+]
+
+---
+# Interacting with Earth's surface 2
+
+There are three types of atmospheric scattering:
+
+* Rayleigh = particles are very small compared to the wavelength 
+* Mie = particles are the same size compared to the wavelength
+* Non selective = particles are much larger than the wavelength 
+
+&lt;img src="img/scattering.jpg" width="60%" style="display: block; margin: auto;" /&gt;
+.small[Source: [Julien Chimot, from Bovensmann et al., 2011](https://julien-chimot-research.blog/the-light-energy-source-in-remote-sensing/)
+]
+
+---
+class: inverse, center, middle
+
+# Scattering in action....
+
+--
+# Why is the sky blue
+
+---
+
+# Raleigh scattering in action
+
+* Sunlight is scattered by  particles in the atmosphere
+
+* Smaller wavelengths scatter easier
+
+* These are the blue hues
+
+* When the sun's angle changes the blue light scatter doesn't reach our eyes as the distance is increased = so longer wavelengths reach us= reds and oranges. 
+
+&lt;img src="img/redsunsetdiagram1.png" width="60%" style="display: block; margin: auto;" /&gt;
+.small[Source: [Explaining Science](https://explainingscience.org/2015/09/30/why-is-the-sky-blue/)
+]
+---
+class: inverse, center, middle
+
+# Scattering in action....
+
+--
+# Why is the ocean (usually) blue?
+
+---
+
+class: inverse, center, middle
+
+# Satellite (and aerial) sensors are affected by the atmopsheric scattering
+
+# We can remove this through removing them through **atmospheic correction**
+
+# More on this in future lectures
+
+---
+
 # Data formats 
 
 .pull-left[
@@ -323,12 +409,15 @@ Sensors can be mounted on any platform.
 * In the majority of cases remotely sensed data is raster...
   * band interleaved by line (BIL)
   * band sequential (BSQ)
-  * GeoTIFF (most common)
   * band interleaved by pixel (BIP)
+  * GeoTIFF (most common)
+
 
 * However this is dependent on the sensor. 
 
 * For example, LiDAR is point data with x,y (like we've seen before) but also a z dimension (height). But LiDAR is often used to create a raster dataset such as an elevation model
+
+* See [ArcMap help for examples of BIL, BSQ and BIP](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/raster-and-images/bil-bip-and-bsq-raster-files.html)
 ]
 
 ---
@@ -371,7 +460,7 @@ Quick examples to follow...
 
 * As humans we see in the visible part of the electromagnetic spectrum, meaning the images we see are composed of red, green and blue wavelengths --- the visible spectrum.
 
-* Objects appear a certain colour as that's the wavelength that is reflected, with the others being absorbed. 
+* Objects appear a certain colour as that's the wavelength that is reflected, with the others being absorbed (or scattered - like sunsets). 
 
 * We can take values for each wavelength (or a band of several wavelengths) across the electromagnetic spectrum to create a **spectral signature** 
 
@@ -398,6 +487,13 @@ For more information watch the into to Electromagnetic Spectrum from NASA: https
 ---
 # Spectral resolution 3 
 
+
+&lt;img src="img/EMS-Introduction_0.jpeg" width="100%" style="display: block; margin: auto;" /&gt;
+.small[Source: [NASA Science](https://earthdata.nasa.gov/learn/backgrounders/remote-sensing#orbits)]
+
+---
+# Spectral resolution 4 
+
 * We classify the type or spectral resolution based on the number of bands it observes
 
 * Each band is **usually** provided as a separate raster layer
@@ -408,13 +504,30 @@ For more information watch the into to Electromagnetic Spectrum from NASA: https
 .small[Source: [nieros](https://www.nireos.com/hyperspectral-imaging/)]
 
 ---
+# Spectral resolution 5
+
+Measuring spectral reflectance isn't constrained to senors mounted on satellites, planes or drones
+
+It can also be done using a **"spectroradiometer"** in a lab or in the field...
+
+However, this is dependent on the incident (incoming) radiation so it must be calibrated with a pure white reference panel...
+
+.pull-left[
+&lt;img src="img/soton_lab.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+.small[Source: [Richard Treves](https://www2.geog.soton.ac.uk/users/trevesr/obs/rseo/electromagnetic_radiation_and_plants.html)]
+]
+
+.pull-right[
+&lt;img src="img/calibration_panel.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+]
+---
 # Radiometric resolution 
 
 * 8 bit = 256 possible values 
 
 * 4 bit = 16 possible values
 
-&lt;img src="img/bits.png" width="100%" /&gt;
+&lt;img src="img/bits.png" width="80%" style="display: block; margin: auto;" /&gt;
 .small[Source: [GIS geography](https://gisgeography.com/bit-depth/)]
 
 Lower the radiometric resolution the lower the quality of the image and possibility to differentiate features. 
@@ -425,17 +538,59 @@ Lower the radiometric resolution the lower the quality of the image and possibil
 
 * The revisit time of the sensor
 
-&lt;img src="img/temporal_resolution.jpg" width="100%" /&gt;
+&lt;img src="img/temporal_resolution.jpg" width="60%" style="display: block; margin: auto;" /&gt;
 .small[Source: [ESRI](https://www.esri.com/about/newsroom/arcuser/a-world-of-imagery-available-through-arcgis-online/)]
 
 ---
 
 # Other considerations 
 
+* Type of orbit 
+  * geosynchronous orbit (GSO) = satellite matches the Earth's rotation
+  * geostationary orbit = holds same position, usually only for communications but some sensors are geostationary.  
+
+&lt;img src="img/20087311523106900-2008-09TatemF2.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+.small[Source: [American Scientist](https://www.americanscientist.org/article/fifty-years-of-earth-observation-satellites)]
+
+---
+
+# Common sesnors:
+
+
+
 ---
 
 # Balancing act
 
+* The type of question you are looking to answer will dictate what sensor is most appropriate.
+
+  * Size of features 
+  
+  * Date range
+  
+  * Revisit requirement
+  
+  * Spectral sensitivity 
+  
+  * Cost  
+  
+---
+
+# Conclusion
+
+* Active and passive remote sensing
+
+* Considered how electromagnetic waves interact with
+  * Earth's surface
+  * Atmosphere
+  
+* Explored the 4 resolutions of remotely sensed data
+  * Spectral
+  * Spatial
+  * Temporal
+  * Radiometric
+  
+* Identified how constrations (envrionmental or sensor) can dictate the choice of data we use. 
 
 
 
