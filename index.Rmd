@@ -232,6 +232,27 @@ class: inverse, center, middle
 
 ---
 
+# Have you used..or seen...
+
+Where have you seen or used remotely sensed data before? 
+.pull-left[
+### Source
+.can-edit[
+- thing one
+
+- thing two
+]]
+
+.pull-right[
+### Application
+.can-edit[
+- thing one
+
+- thing two
+]]
+
+
+---
 # Introduction to remote sensing 
 
 .pull-left[
