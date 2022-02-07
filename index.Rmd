@@ -225,6 +225,14 @@ class: inverse, center, middle
 
 #`r emo::ji("smile")`
 ---
+class: inverse, center, middle
+
+
+# Not only do I want you to learn some remote sensing skills
+
+# A goal of the module is to create an online personal portofolio of your work
+
+---
 
 class: inverse, center, middle
 
@@ -643,7 +651,7 @@ Measuring spectral reflectance isn't constrained to senors mounted on satellites
 
 It can also be done using a **"spectroradiometer"** in a lab or in the field...
 
-However, this is dependent on the incident (incoming) radiation so it must be calibrated with a pure white reference panel...
+However, this is dependent on the incident (incoming) radiation so it must be calibrated with a pure white reference panel...which you must never touch directly!
 
 .pull-left[
 ```{r echo=FALSE, out.width='80%', fig.align='center'}
@@ -656,7 +664,10 @@ knitr::include_graphics('img/soton_lab.jpg')
 ```{r echo=FALSE, out.width='50%', fig.align='center'}
 knitr::include_graphics('img/calibration_panel.jpg')
 ```
+.small[Source: Andy MacLachlan]
 ]
+
+.small[satellite data is also compared to reference sites, know as vicarious calibration]
 ---
 # Radiometric resolution 
 
@@ -697,12 +708,6 @@ knitr::include_graphics('img/20087311523106900-2008-09TatemF2.jpg')
 
 ---
 
-# Common sesnors:
-
-
-
----
-
 # Balancing act
 
 * The type of question you are looking to answer will dictate what sensor is most appropriate.
@@ -733,7 +738,7 @@ knitr::include_graphics('img/20087311523106900-2008-09TatemF2.jpg')
   * Temporal
   * Radiometric
   
-* Identified how constrations (envrionmental or sensor) can dictate the choice of data we use. 
+* Identified how constraints (environmental or sensor) can dictate the choice of data we use. 
 
 
 
