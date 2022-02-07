@@ -251,6 +251,8 @@ Where have you seen or used remotely sensed data before?
 - thing two
 ]]
 
+`r countdown(minutes=1, seconds =0, warn_when = 10, bottom=0, right=0)`
+
 
 ---
 # Introduction to remote sensing 
@@ -278,6 +280,26 @@ knitr::include_graphics('img/Satellites.jpg')
 ```
 .small[Source: https://www.industrytap.com/remote-sensing-sustainable-land-use/33218]
 ]
+---
+class: inverse, center, middle
+
+## The following slides are just an introduction, you might have many questions, we will go into more detail throughout the term 
+---
+
+#Why is this an interesting field...
+
+* Mass of data - satellites collect data on the same points on Earth every day to every 16 days. 
+
+* Data is a bit "harder" to use and interpret than traditional GIS data (e.g. points, polygons) meaning it doesn't have broad use in public realm (e.g. not on London Data store)
+
+* Frequency of update and less reliance on authorities (e.g London Atlas)
+
+* More free resources to process large volumes of data (e.g. Google Earth Engine)
+
+* Emergence of policy decisions being made using remotely sensed data
+
+* Filled with jargon that often isn't as complicated as it sounds
+
 ---
 
 # The two types of sensor
@@ -324,14 +346,17 @@ knitr::include_graphics('img/electormagneticfield.PNG')
 ---
 # Interacting with Earth's surface 
 
-* Electromagnetic radiation(EMR) (e.g. from the sun) isn't automatically reflected 
-* Experiences a number of changes prior to hitting the sensor
+Electromagnetic radiation(EMR) (e.g. from the sun) isn't automatically reflected. Experiences a number of changes prior to hitting the sensor
 These include:
+
+**Surface**
   * Energy being absorbed by the surface
   * Energy being transmitted through the surface
+  
+**Atmospheric**  
   * Energy can be scattered by particles in the atmosphere (next slide)
 
-```{r echo=FALSE, out.width='60%', fig.align='center'}
+```{r echo=FALSE, out.width='45%', fig.align='center'}
 knitr::include_graphics('img/EMR.png')
 ```
 
@@ -385,6 +410,101 @@ class: inverse, center, middle
 
 --
 # Why is the ocean (usually) blue?
+
+---
+
+# Considering this...
+
+## What do you think is a big issue which can prevent capture of land / the target?
+
+--
+
+###Hint: It's a very big problem in the UK...
+--
+
+###Hint: given the weather 
+
+---
+
+# Clouds
+
+```{r echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics('img/LC08_L1TP_004053_20190409_20190409_01_RT_0.jpg')
+```
+.small[Source: [Landsat Collections Land Cloud Cover](https://www.usgs.gov/landsat-missions/landsat-collections-land-cloud-cover)
+]
+---
+
+# Active sensors
+
+Several different types but... Synthetic Aperture Radar (SAR) can "see through clouds"
+
+* Radar collects at longer wavelengths than optical sensors - pass through clouds that have smaller particle sizes
+* Has it's own bands - e.g. P, L, S, C, X, Ku, K
+* Wavelength dictates how far it can penetrate into medium
+* See through clouds, volcanic ash + atmospheric conditions
+* Collects data at night
+
+.pull-left[
+```{r echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics('img/SAR.png')
+```
+.small[Source: Ollie Ballinger]
+]
+
+.pull-right[
+```{r echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics('img/SARticle_microwave_fig-05.jpg')
+```
+.small[Source: [NASA, what is SAR](https://earthdata.nasa.gov/learn/backgrounders/what-is-sar)
+]
+]
+---
+
+# Interacting with Earth's surface 
+
+### less commonly documented surface interactions
+
+Bidirectional Reflectance Distribution Function (BRDF)
+  * View (e.g. sensor) and illumination (e.g. sun) angles can change
+  * Energy being reflected from the surface that is smooth or diffuse.
+
+```{r echo=FALSE, out.width='35%', fig.align='center'}
+knitr::include_graphics('img/brdf1.png')
+```
+.small[Source: [Professor Crystal Schaaf’s Lab](https://www.umb.edu/spectralmass/terra_aqua_modis/modis)
+]
+
+---
+
+# Interacting with Earth's surface 
+
+### less commonly documented surface interactions
+
+Bidirectional Reflectance Distribution Function (BRDF) examples
+
+"This is a black spruce forest in the BOREAS experimental region in Canada.
+* Left: backscattering (sun behind observer); note the bright region (hotspot) where all shadows are hidden.
+* Right: forward scattering (sun opposite observer); note the shadowed centers of trees and transmission of light through the edges of the canopies."
+
+```{r echo=FALSE, out.width='40%', fig.align='center'}
+knitr::include_graphics('img/brdfspruce.jpg')
+```
+.small[Source: [Professor Crystal Schaaf’s Lab, Photograph by Don Deering](https://www.umb.edu/spectralmass/terra_aqua_modis/modis)
+]
+---
+
+## less commonly documented surface interactions
+
+  * Polarization
+     * Applicable to Radar: Electromagnetic waves are polarized and the direction depends on the oscillation of the electromagnetic field. When they are reflected from the surface the waves can be linked to surface properties - roughness, shape, orientation, moisture, salinity, density. 
+    * Single polarization: same polarization transmitted and received
+    * Dual polarization: One sent, different one received
+    * Quad polarization: system can transmit and receive four types
+    * Source: [NASA](https://nisar.jpl.nasa.gov/mission/get-to-know-sar/polarimetry/) and [Utwente living textbook](https://ltb.itc.utwente.nl/518/concept/92622)
+  
+  * Fluoresence 
+      * Object illuminated with radiation of one wavelength emits radiation at another wavelength
 
 ---
 
