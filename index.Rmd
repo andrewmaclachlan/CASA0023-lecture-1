@@ -52,7 +52,7 @@ library(fontawesome)
 
 # Remotely Sensing Cities and Environments
 
-### Lecture 1
+### Lecture 1: An Introduction to Remote Sensing
 
 ### 02/02/2022 (updated: `r format(Sys.time(), "%d/%m/%Y")`)
 
