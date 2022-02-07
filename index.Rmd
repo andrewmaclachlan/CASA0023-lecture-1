@@ -365,16 +365,8 @@ These include:
 **Atmospheric**  
   * Energy can be scattered by particles in the atmosphere (next slide)
 
-```{r echo=FALSE, out.width='60%', fig.align='center'}
+```{r echo=FALSE, out.width='35%', fig.align='center'}
 knitr::include_graphics('img/EMR.PNG')
-```
-.small[Source: [Principles of Remote sensing](http://www.wamis.org/agm/pubs/agm8/Paper-2.pdf)
-]
-
----
-
-```{r echo=FALSE, out.width='60%', fig.align='center'}
-knitr::include_graphics('img/EMR.png')
 ```
 .small[Source: [Principles of Remote sensing](http://www.wamis.org/agm/pubs/agm8/Paper-2.pdf)
 ]
