@@ -354,7 +354,7 @@ knitr::include_graphics('img/electormagneticfield.PNG')
 ---
 # Interacting with Earth's surface 
 
-Electromagnetic radiation(EMR) (e.g. from the sun) isn't automatically reflected. Experiences a number of changes prior to hitting the sensor
+Electromagnetic radiation(EMR) (e.g. from the sun) isn't automatically reflected. It experiences a number of changes prior to hitting the sensor
 
 These include:
 
@@ -740,5 +740,14 @@ knitr::include_graphics('img/20087311523106900-2008-09TatemF2.jpg')
   
 * Identified how constraints (environmental or sensor) can dictate the choice of data we use. 
 
+---
 
+# Practical 
+
+* 
+---
+
+# Reading
+
+* Principles or Remote Sensing, An introductory text book, Chapter 2 "Electromagnetic energy and remote sensing": https://webapps.itc.utwente.nl/librarywww/papers_2009/general/principlesremotesensing.pdf
 
