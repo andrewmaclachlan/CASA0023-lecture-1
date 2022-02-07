@@ -355,6 +355,7 @@ knitr::include_graphics('img/electormagneticfield.PNG')
 # Interacting with Earth's surface 
 
 Electromagnetic radiation(EMR) (e.g. from the sun) isn't automatically reflected. Experiences a number of changes prior to hitting the sensor
+
 These include:
 
 **Surface**
@@ -364,7 +365,7 @@ These include:
 **Atmospheric**  
   * Energy can be scattered by particles in the atmosphere (next slide)
 
-```{r echo=FALSE, out.width='45%', fig.align='center'}
+```{r echo=FALSE, out.width='30%', fig.align='center'}
 knitr::include_graphics('img/EMR.png')
 ```
 
