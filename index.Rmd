@@ -744,7 +744,11 @@ knitr::include_graphics('img/20087311523106900-2008-09TatemF2.jpg')
 
 # Practical 
 
-* 
+* Loading Landsat and Sentinel data
+
+* Exploring SNAP and R
+
+* Plotting spectral signatures 
 ---
 
 # Reading
