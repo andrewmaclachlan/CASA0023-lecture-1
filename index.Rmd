@@ -748,7 +748,11 @@ knitr::include_graphics('img/20087311523106900-2008-09TatemF2.jpg')
 
 * Exploring SNAP and R
 
+* Selecting regions of interest
+
 * Plotting spectral signatures 
+
+
 ---
 
 # Reading
