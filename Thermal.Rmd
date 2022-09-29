@@ -1,0 +1,34 @@
+# Remote Sensing Physics Laws 1
+
+* Planck's law: Electromagnetic radiation emitted from a black body (**theoretical** concept, absorbs and emits all energy upon it) at a wavelength as function of absolute temperature
+  * Every object emits radiation at all times and at all wavelengths
+  * Energy at shorter wavelengths increases rapidly with temperature
+  * Longer wavelengths have less energy
+
+```{r echo=FALSE, out.width='40%', fig.align='center'}
+knitr::include_graphics('img/plankslaw.png')
+```
+.small[Source: [Dr Claudia Künzer](https://earth.esa.int/documents/973910/1002056/CK3.pdf/4e5b4e5a-d898-43b8-9e5c-ba7494aa58c8)
+]  
+---
+
+# Remote Sensing Physics Laws 2
+
+* Stefan-Boltzmann law: total electromagnetic radiation emitted by a blackbody as a function of the absolute temperature which corresponds to the area under the radiation curve (integral). 
+  * all processes that generate radiation are related to temperature of the body emitting it
+  * higher the temperature the more radiation it emits. 
+
+```{r echo=FALSE, out.width='35%', fig.align='center'}
+knitr::include_graphics('img/boltzmann.png')
+```
+.small[Source: [Dr Claudia Künzer](https://earth.esa.int/documents/973910/1002056/CK3.pdf/4e5b4e5a-d898-43b8-9e5c-ba7494aa58c8)
+]  
+
+---
+# Remote Sensing Physics Laws 3
+
+  
+* Wien's Displacement law: wavelength at which maximum spectral radiant exitance occurs 
+   * as temperature increase energy emitted rises and wavelength with most energy becomes shorter 
+
+
