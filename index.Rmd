@@ -181,6 +181,8 @@ Sessions:
   - will discuss assignment tasks
   - Q and A
   - time for us to address any issues
+
+- Resources, including reading are always provided in the practical book. There may be some extra links in lectures to support points made.
   ]
   
 .pull-right[
@@ -379,6 +381,20 @@ knitr::include_graphics('img/Satellites.jpg')
 ]
 
 ---
+
+# Introduction to remote sensing 
+
+
+The sheer volume of space craft and sensor is causing a bit of a problem with space junk that is tracked by NASA...27,000 pieces of it!
+
+```{r echo=FALSE, out.width='50%', fig.align='center'}
+knitr::include_graphics('img/4-8-nrc-evaluates-nasas-orbital-debris-programs.jpg')
+```
+
+.small[Space Debris. Source:[NASA](https://www.nasa.gov/mission_pages/station/news/orbital_debris.html)
+] 
+
+---
 class: inverse, center, middle
 
 ## The following slides are just an introduction, you might have many questions, we will go into more detail throughout the term 
@@ -459,6 +475,15 @@ knitr::include_graphics('img/electormagneticfield.PNG')
 ]
 
 ---
+
+class: inverse, center, middle
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lwfJPc-rSXw?start=8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+---
+
 # Interacting with Earth's surface 
 
 Electromagnetic radiation(EMR) (e.g. from the sun) isn't automatically reflected. It experiences a number of changes prior to hitting the sensor
@@ -505,7 +530,7 @@ class: inverse, center, middle
 
 # Raleigh scattering in action
 
-* Sunlight (colour of the sun) is scattered by  particles in the atmosphere
+* Sunlight is scattered by  particles in the atmosphere
 
 * Smaller wavelengths scatter easier - These are the blue hues
 
@@ -527,6 +552,12 @@ knitr::include_graphics('img/scattering_table.png')
 .small[Source: [Explaining Science](https://explainingscience.org/2015/09/30/why-is-the-sky-blue/)
 ]
 
+
+```{r echo=FALSE, out.width='45%', fig.align='center'}
+knitr::include_graphics('img/sky4.en.png')
+```
+.small[Source: [NASA](https://spaceplace.nasa.gov/blue-sky/en/)
+]
 ---
 class: inverse, center, middle
 
@@ -569,6 +600,8 @@ class: inverse, center, middle
 It absorbs the red yellow and green wavelengths but reflects (or scatters) blue.
 
 Shallow water can is clear as not many molecules scatter the light. Deeper ocean = very blue..
+
+Think about dropping ball into a dense forest...it will hit more branches...
 
 ```{r echo=FALSE, out.width='75%', fig.align='center'}
 knitr::include_graphics('img/deep_water.png')
