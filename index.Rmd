@@ -88,7 +88,10 @@ class: inverse, center, middle
 class: inverse, center, middle
 ```{r xaringan-logo, echo=FALSE}
 xaringanExtra::use_logo(
-  image_url = "img/casa_logo.jpg"
+  image_url = "img/casa_logo.jpg",
+  width = "50px",
+  position = xaringanExtra::css_position(top = "1em", right = "2em")
+
 )
 ```
 
@@ -120,6 +123,9 @@ knitr::include_graphics('img/satellite.png')
 ]
 
 ---
+```{r, echo=FALSE}
+xaringanExtra::use_progress_bar(color = "#0051BA", location = "bottom")
+```
 
 # How to use the lectures
 
@@ -159,7 +165,7 @@ knitr::include_graphics('img/satellite.png')
 
 - Challenge yourself 
 
-- Complete the set tasks and come prepared 
+- Complete the set assignments/tasks and come prepared 
 
 ---
 # Module housekeeping 
@@ -178,10 +184,12 @@ Sessions:
   ]
   
 .pull-right[
-```{r echo=FALSE, out.width='100%'}
+```{r echo=FALSE, out.width='85%'}
 knitr::include_graphics('img/echo-1.jpg')
 ```
-]  
+.small[Inflation Tests of the Echo 1 Satellite in Weeksville, N.C. Source:[Original from NASA. Digitally enhanced by rawpixel.](https://www.rawpixel.com/image/418674/free-photo-image-silver-nasa-balloon)
+] 
+]
 ???
 Echo1-first passive US communications satellite
 
@@ -218,24 +226,43 @@ At the end of this module you should be able...
 
 Bold type denotes key aspects of the module
 ---
-# Assessment
+# Assessment 1 (30%)
 
-1. Weekly project online portfolio using Bookdown, requiring:
-  * responses to short discussion questions with reference to literature 
-  * concise summary of the concepts taught each week with reference to literature and any possible methodological advancements  
-  * notes of required (and any additional independent) reading, summarizing each piece and providing a narrative through the work. This could include both flow diagrams and written work or any other suitable alternative.
-
-1. Group presentation 
-  * A 10-minute group presentation "bidding" for employment as contractors to solve an issue from policy. 
+* Group presentation 
+  * A 10-minute group presentation "bidding" as contractors for a tender to solve an issue from policy. 
   * Groups will select a single city and detail how Earth observation data could be applied to or improve their local, national or metropolitan development plans in achieving global development goals (e.g. New Urban Agenda, Sustainable Development Goals or the Sendai Framework for disaster risk reduction). 
-  * The presentation will require **no analysis** to be undertaken.  
-  
+  * The city has a total of £500,000 to spend.
+  * The presentation will require **no analysis** to be undertaken but must be done in markdown
+
+**Group code**
+
+> all students in each group are active group members, respect each other, make appropriate and valid contributions, provide timely responses to their group and do not place unnecessary pressure or expectations on each other (e.g. working unsociable hours).
+
+---
+# Assessment 2 (70%)
+
+
+* Weekly learning diary using Quarto:
+  * **summarise, analyse and comment on** the material presented each we
+  * not a formal piece of writing 
+  * no specific formatting requirement (e.g. written response or flowcharts)
+      - Summary: summary of the content
+      - Applications: data / concepts / methods (or related concepts) have been applied in literature / policy or other studies
+      - Reflection: personal reflection on the presented content 
+
+You should not just restate what has been presented in the lectures
+
+* What have you learnt
+* How has it been used or applied in literature
+* What are your thoughts on this
+
+> all students should be familar with R, RStudio, Git and GitHub.
 ---
 
 class: inverse, center, middle
 
-# More details to come
-#all tools required will be taught 
+# all tools required will be taught 
+# see the markscheme and requirements document
 --
 
 #`r emo::ji("smile")`
@@ -278,6 +305,51 @@ Where have you seen or used remotely sensed data before?
 
 
 ---
+
+# Have you used..or seen...
+
+Where have you seen or used remotely sensed data before? 
+.pull-left[
+### Source
+
+- Dynamic World (Sentinel data)
+
+- Landsat
+
+- Sentinel 
+
+- Several (Landsat and Sentinel)
+
+- Landsat
+
+- Several (Landsat and Sentinel)
+
+- Several (Landsat and Sentinel and SAR)
+
+
+]
+
+.pull-right[
+### Application
+
+- Near real time land cover data set with 10m resolution 
+
+- Urban / green space coverage and accessibility
+
+- Pollution studies 
+
+- Illegal logging 
+
+- Forest fires 
+
+- Temperature studies (urban heat island)
+
+- Flooding / disaster response / building footprints
+
+]
+
+
+---
 # Introduction to remote sensing 
 
 .pull-left[
@@ -301,8 +373,11 @@ Where have you seen or used remotely sensed data before?
 ```{r echo=FALSE, out.width='100%'}
 knitr::include_graphics('img/Satellites.jpg')
 ```
-.small[Source: https://www.industrytap.com/remote-sensing-sustainable-land-use/33218]
+
+.small[Remote Sensing & Sustainable Land Use. Source:[Industry Tap](https://www.industrytap.com/remote-sensing-sustainable-land-use/33218)
+] 
 ]
+
 ---
 class: inverse, center, middle
 
@@ -317,11 +392,23 @@ class: inverse, center, middle
 
 * Frequency of update and less reliance on authorities (e.g London Atlas)
 
-* More free resources to process large volumes of data (e.g. Google Earth Engine)
+* More free resources to process large volumes of data (e.g. **Google Earth Engine**)
 
 * Emergence of policy decisions being made using remotely sensed data
 
 * Filled with jargon that often isn't as complicated as it sounds
+
+---
+#Why is this an interesting field...GEE
+
+
+```{r echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics('img/GEE.png')
+```
+
+.small[GEE apps. Source:[GEE](https://www.earthengine.app/)
+] 
+
 
 ---
 
@@ -330,16 +417,11 @@ class: inverse, center, middle
 ```{r echo=FALSE, out.width='100%'}
 knitr::include_graphics('img/Passive-and-active-sensors-systems-working-principles-24.png')
 ```
-.small[Source: https://www.researchgate.net/figure/Passive-and-active-sensors-systems-working-principles-24_fig2_344464269]
+.small[Passive and active sensors systems working principles. Source:[Nadhir Al-Ansari](Source: https://www.researchgate.net/figure/Passive-and-active-sensors-systems-working-principles-24_fig2_344464269)
+] 
 ]
 
 .pull-right[
-### Active
-
-* Have an energy source for illumination 
-* Actively emits electormagentic waves and then waits to receive 
-* Such as: Radar, X-ray, LiDAR
-
 ### Passive  
 
 * Use energy that is available
@@ -348,15 +430,25 @@ knitr::include_graphics('img/Passive-and-active-sensors-systems-working-principl
 * Energy is in electromagnetic waves...
 * Such as: Human eye, camera, satellite sensor
 
+
+### Active
+
+* Have an energy source for illumination 
+* Actively emits electormagentic waves and then waits to receive 
+* Such as: Radar, X-ray, LiDAR
+
+
 Sensors can be mounted on any platform. 
 ]
 
 ---
 # Electromagentic waves
 
+Electromagnetic radiation (has both electric and magnetic fields) propagates (moves) as waves
+
 * Perpendicular electric and magnetic field 
-* $\lambda$ = wavelength, distance between two crests 
-* $c$ = velocity of light 3 x 10^8
+* $\lambda$ = **wavelength**, distance between two crests 
+* $c$ = velocity of light 3 x 10^8 meters per second
 * $v$ = frequency, rate of oscillation 
 
 $\lambda$ = $c$ / $v$
@@ -413,11 +505,11 @@ class: inverse, center, middle
 
 # Raleigh scattering in action
 
-* Sunlight is scattered by  particles in the atmosphere
+* Sunlight (colour of the sun) is scattered by  particles in the atmosphere
 
-* Smaller wavelengths scatter easier
+* Smaller wavelengths scatter easier - These are the blue hues
 
-* These are the blue hues
+* At sunrise or sunset there is much more atmosphere to pass through so more scattering occurs
 
 * When the sun's angle changes the blue light scatter doesn't reach our eyes as the distance is increased = so longer wavelengths reach us= reds and oranges. 
 
@@ -427,15 +519,64 @@ knitr::include_graphics('img/redsunsetdiagram1.png')
 .small[Source: [Explaining Science](https://explainingscience.org/2015/09/30/why-is-the-sky-blue/)
 ]
 ---
+# Raleigh scattering in action
+
+```{r echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics('img/scattering_table.png')
+```
+.small[Source: [Explaining Science](https://explainingscience.org/2015/09/30/why-is-the-sky-blue/)
+]
+
+---
 class: inverse, center, middle
 
 # Scattering in action....
 
 --
+# Why does the moon have a black sky?
+
+---
+# Scattering in action....
+
+**Why does the moon have a black sky?**
+
+There is no atmosphere on the moon so no scattering can happen
+
+The sun appears whiter
+
+Astronauts struggled to gauge distance as on Earth the atmosphere makes far things hazy.
+
+```{r echo=FALSE, out.width='55%', fig.align='center'}
+knitr::include_graphics('img/moon.png')
+```
+.small[Source: [Explaining Science](https://explainingscience.org/2015/09/30/why-is-the-sky-blue/)
+]
+
+---
+class: inverse, center, middle
+
+# Scattering in action....
+
+--
+
 # Why is the ocean (usually) blue?
 
 ---
+# Scattering in action....
 
+**Why is the ocean (usually) blue?**
+
+It absorbs the red yellow and green wavelengths but reflects (or scatters) blue.
+
+Shallow water can is clear as not many molecules scatter the light. Deeper ocean = very blue..
+
+```{r echo=FALSE, out.width='75%', fig.align='center'}
+knitr::include_graphics('img/deep_water.png')
+```
+.small[Source: [Words in mOcean blog](https://wordsinmocean.com/2015/10/21/if-water-is-clear-why-is-the-ocean-blue/)
+]
+
+---
 # Considering this...
 
 ## What do you think is a big issue which can prevent capture of land / the target?
@@ -468,6 +609,8 @@ Several different types but... Synthetic Aperture Radar (SAR) can "see through c
 * See through clouds, volcanic ash + atmospheric conditions
 * Collects data at night
 
+Much more on SAR towards the end of the module.
+
 .pull-left[
 ```{r echo=FALSE, out.width='80%', fig.align='center'}
 knitr::include_graphics('img/SAR.png')
@@ -484,9 +627,17 @@ knitr::include_graphics('img/SARticle_microwave_fig-05.jpg')
 ]
 ---
 
+class: inverse, center, middle
+
+## Some context on less commonly documented surface interactions
+
+### More information in future sessions
+
+---
+
 # Interacting with Earth's surface 
 
-### less commonly documented surface interactions
+**less commonly documented surface interactions**
 
 Bidirectional Reflectance Distribution Function (BRDF)
   * View (e.g. sensor) and illumination (e.g. sun) angles can change
@@ -502,7 +653,7 @@ knitr::include_graphics('img/brdf1.png')
 
 # Interacting with Earth's surface 
 
-### less commonly documented surface interactions
+**less commonly documented surface interactions**
 
 Bidirectional Reflectance Distribution Function (BRDF) examples
 
@@ -517,7 +668,11 @@ knitr::include_graphics('img/brdfspruce.jpg')
 ]
 ---
 
-## less commonly documented surface interactions
+# Interacting with Earth's surface 
+
+**SAR data - less commonly documented surface interactions**
+
+**Much more on this later in the term**
 
   * Polarization
      * Applicable to Radar: Electromagnetic waves are polarized and the direction depends on the oscillation of the electromagnetic field. When they are reflected from the surface the waves can be linked to surface properties - roughness, shape, orientation, moisture, salinity, density. 
@@ -530,14 +685,56 @@ knitr::include_graphics('img/brdfspruce.jpg')
       * Object illuminated with radiation of one wavelength emits radiation at another wavelength
 
 ---
+# Interacting with Earth's surface 
+
+**Polarization - much more on this later in term**
+
+
+.pull-left[
+
+  * Different ploarizations:
+    * orientation of the plane in which EMR waves transmitted..
+    * "direction of travel of an electromagnetic wave vector’s tip: vertical (up and down), horizontal (left to right), or circular (rotating in a constant plane left or right)."
+    
+* Single = 1 horizontal (or vertical)  
+
+* Dual = transmits and receives both horizontal and vertical
+
+* HH = emitted in horizontal (H) and received in horizontal (H)
+    
+]
+
+.pull-right[
+
+```{r echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics('img/polarisation.png')
+```
+
+.small[Polarization. Source:[Wetland Monitoring and Mapping Using Synthetic Aperture Radar](https://www.intechopen.com/chapters/63701)
+]
+
+]
+ 
+
+---
 
 class: inverse, center, middle
 
-# Satellite (and aerial) sensors are affected by the atmopsheric scattering
+## Satellite (and aerial) sensors are affected by the atmopsheric scattering
 
-# We can remove this through removing them through **atmospheic correction**
+## We can remove this through removing them through **atmospheric correction**
 
-# More on this in future lectures
+## More on this in future lectures
+
+---
+
+class: inverse, center, middle
+
+## Take home message (from this section)
+
+### It's not as simple to just say energy from sun is reflected by Earth to a sensor
+
+### There are many interactions that influence the data being created and we use
 
 ---
 
@@ -590,7 +787,7 @@ Remotely sensed data and applications will vary based on the four resolutions
   * an 8 bit sensor has values between 0 and 255 (256 possibilities)
   * an 11 bit sensor has values between 0 and 2047(2048 possibilities)
   
-Quick examples to follow...
+Examples to follow...
 ---
 
 # Spatial resolution 
@@ -619,7 +816,12 @@ knitr::include_graphics('img/spectral_signatures_landsat_450.jpg')
 ```
 .small[Source: [Science Education through Earth Observation for High Schools](https://seos-project.eu/classification/classification-c01-p05.html)]
 
-For more information watch the into to Electromagnetic Spectrum from NASA: https://science.nasa.gov/ems/01_intro 
+
+---
+class: inverse, center, middle
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lwfJPc-rSXw?start=198" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
 
@@ -629,9 +831,11 @@ For more information watch the into to Electromagnetic Spectrum from NASA: https
 
 * Water vapour, ozone, carbon dioxide and atmospheric molecules block parts of the the spectrum
 
+* Atmospheric transmission (y axis) [is the transmission of that wavelength (in other words how much is not absorbed by gasses)](https://www.usna.edu/Users/oceano/pguth/md_help/remote_sensing_course/atmos_transmit.htm)
+
 * We can only observe where there aren't absorbed by the atmosphere.  
 
-```{r echo=FALSE, out.width='80%', fig.align='center'}
+```{r echo=FALSE, out.width='75%', fig.align='center'}
 knitr::include_graphics('img/Atmospheric-Electromagnetic-Opacity.png')
 ```
 .small[Source: [GIS geography](https://gisgeography.com/atmospheric-window/)]
@@ -683,8 +887,12 @@ knitr::include_graphics('img/calibration_panel.jpg')
 ]
 
 .small[satellite data is also compared to reference sites, know as vicarious calibration]
+
 ---
+
 # Radiometric resolution 
+
+The ability of a sensor to identify and show small differences in energy. The higher = the more sensitive it is.
 
 * 8 bit = 256 possible values 
 
@@ -702,6 +910,8 @@ Lower the radiometric resolution the lower the quality of the image and possibil
 # Temporal resolution 
 
 * The revisit time of the sensor
+
+* Low resolution means it has a large pixel size (e.g. MODIS is 500m by 500m pixel)
 
 ```{r echo=FALSE, out.width='60%', fig.align='center'}
 knitr::include_graphics('img/temporal_resolution.jpg')
@@ -767,14 +977,4 @@ knitr::include_graphics('img/20087311523106900-2008-09TatemF2.jpg')
 
 * Plotting spectral signatures 
 
-
----
-
-# Reading
-
-* Principles of Remote Sensing, An introductory text book, Chapter 2 "Electromagnetic energy and remote sensing": https://webapps.itc.utwente.nl/librarywww/papers_2009/general/principlesremotesensing.pdf
-
-* Principles of Remote Sensing, An introductory text book, Section 4.6 "Overview of populate spaceborne sensors": https://webapps.itc.utwente.nl/librarywww/papers_2009/general/principlesremotesensing.pdf
-
-* Remote sensing for dummies: https://storymaps.arcgis.com/stories/cb1577b0f5bc485c974b4ea19d52282d 
 
