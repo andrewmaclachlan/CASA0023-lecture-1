@@ -504,6 +504,24 @@ knitr::include_graphics('img/EMR.PNG')
 ]
 
 ---
+# Terms
+
+* Waves of an electromagnetic field, travel through space and carry radiant energy = Electromagnetic radiation (EMR). Waves are part of the EMR spectrum.
+
+* Energy carried by EMR waves = radiant energy
+
+* Energy per unit of time = radiant flux
+
+* Energy from the sun = incoming short wave radiation **or** shortwave radiation 
+
+* Energy (solar power) from the sun per unit area per unit time (from electromagnetic radiation) = solar irradiance (per unit time - flux)
+
+* Energy leaving a surface per unit area per unit time = Exitance (emittance) (per unit time - flux)
+
+Flux means time here.
+
+---
+
 # Interacting with Earth's surface 2
 
 There are three types of atmospheric scattering:
