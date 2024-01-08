@@ -460,7 +460,14 @@ Sensors can be mounted on any platform.
 ]
 
 ---
-# Electromagentic waves
+class: inverse, center, middle
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lwfJPc-rSXw?start=8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+---
+
+# Electromagnetic waves 2
 
 Electromagnetic radiation (has both electric and magnetic fields) propagates (moves) as waves
 
@@ -477,7 +484,7 @@ knitr::include_graphics('img/electormagneticfield.PNG')
 ]
 
 ---
-# Electromagentic waves 2
+# Electromagnetic waves 3
 
 Oscillation vs wavelength
 
@@ -486,15 +493,6 @@ knitr::include_graphics('img/Amplitude-Oscillation-Frequency-Black-and-White.png
 ```
 .small[Source: [What is a Wavelength?](https://www.twinkl.co.uk/teaching-wiki/wavelength)
 ]
-
-
----
-
-class: inverse, center, middle
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lwfJPc-rSXw?start=8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 
 ---
 
@@ -629,14 +627,16 @@ class: inverse, center, middle
 
 It absorbs the red yellow and green wavelengths but reflects (or scatters) blue.
 
+Same concept **blue light shorter wavelength and more easily scatters**
+
 Shallow water can is clear as not many molecules scatter the light. Deeper ocean = very blue..
 
 Think about dropping ball into a dense forest...it will hit more branches...
 
-```{r echo=FALSE, out.width='75%', fig.align='center'}
+```{r echo=FALSE, out.width='60%', fig.align='center'}
 knitr::include_graphics('img/deep_water.png')
 ```
-.small[Source: [Words in mOcean blog](https://wordsinmocean.com/2015/10/21/if-water-is-clear-why-is-the-ocean-blue/)
+.small[Left: shallow water is clear, right deep water is blue. Source: [Words in mOcean blog](https://wordsinmocean.com/2015/10/21/if-water-is-clear-why-is-the-ocean-blue/)
 ]
 
 ---
