@@ -19,7 +19,7 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
-```{r xaringan-all, echo=FALSE}
+```{r xaringan-all, echo=FALSE, warning=FALSE}
 library(countdown)
 library(xaringan)
 library(xaringanExtra)
@@ -177,7 +177,7 @@ Sessions:
 
 - 1 hour weekly lecture 
 
-- 2 hour practical 
+- 1 hour practical 
 
 - Drop in sessions
   - will discuss assignment tasks
@@ -250,8 +250,8 @@ Bold type denotes key aspects of the module
   * **summarise, analyse and comment on** the material presented each we
   * not a formal piece of writing 
   * no specific formatting requirement (e.g. written response or flowcharts)
-      - Summary: summary of the content
-      - Applications: data / concepts / methods (or related concepts) have been applied in literature / policy or other studies
+      - Summary: summary of the content. . It will also include independent thought such as questions, limitations, benefits
+      - Applications: Discussion of how data / concepts / methods (or related concepts) been applied in literature / policy or other studies
       - Reflection: personal reflection on the presented content 
 
 You should not just restate what has been presented in the lectures
@@ -283,30 +283,6 @@ class: inverse, center, middle
 class: inverse, center, middle
 
 # Now a short lecture
-
----
-
-# Have you used..or seen...
-
-Where have you seen or used remotely sensed data before? 
-.pull-left[
-### Source
-.can-edit[
-- thing one
-
-- thing two
-]]
-
-.pull-right[
-### Application
-.can-edit[
-- thing one
-
-- thing two
-]]
-
-`r countdown(minutes=1, seconds =0, warn_when = 10, bottom=0, right=0)`
-
 
 ---
 
@@ -738,7 +714,7 @@ knitr::include_graphics('img/brdfspruce.jpg')
 **Much more on this later in the term**
 
   * Polarization
-     * Applicable to Radar: Electromagnetic waves are polarized and the direction depends on the oscillation of the electromagnetic field. When they are reflected from the surface the waves can be linked to surface properties - roughness, shape, orientation, moisture, salinity, density. 
+     * Applicable to Radar: Electromagnetic waves are polarized and the direction(horizontal (H) or vertical (V)) depends on the oscillation of the electromagnetic field. When they are reflected from the surface the waves can be linked to surface properties - roughness, shape, orientation, moisture, salinity, density. 
     * Single polarization: same polarization transmitted and received
     * Dual polarization: One sent, different one received
     * Quad polarization: system can transmit and receive four types
@@ -987,9 +963,10 @@ knitr::include_graphics('img/temporal_resolution.jpg')
 
 * Type of orbit 
   * geosynchronous orbit (GSO) = satellite matches the Earth's rotation
-  * geostationary orbit = holds same position, usually only for communications but some sensors are geostationary.  
+  * geostationary orbit = holds same position, usually only for communications but some sensors are geostationary. 
+  * sunsynchronous orbit = in sync with the sun - pass over the same spot at the same time each day
 
-```{r echo=FALSE, out.width='80%', fig.align='center'}
+```{r echo=FALSE, out.width='70%', fig.align='center'}
 knitr::include_graphics('img/20087311523106900-2008-09TatemF2.jpg')
 ```
 .small[Source: [American Scientist](https://www.americanscientist.org/article/fifty-years-of-earth-observation-satellites)]
@@ -1040,7 +1017,10 @@ knitr::include_graphics('img/20087311523106900-2008-09TatemF2.jpg')
 
 * Plotting spectral signatures 
 
-```{r include=FALSE}
+```{r include=FALSE, eval=FALSE}
 library(renderthis)
-renderthis::to_pdf("index.html")
+# options(timeout = 300)
+# renderthis::to_pdf("index.Rmd")
+
+pagedown::chrome_print("index.html", timeout=600)
 ```
